@@ -5,7 +5,7 @@ public class DisplayConditions implements Observer, IDisplay {
 
     public DisplayConditions(Subject subject) {
         weatherBase = subject;
-        subject.AddObserver(this);
+        weatherBase.AddObserver(this);
     }
 
     @Override
