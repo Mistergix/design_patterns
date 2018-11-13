@@ -3,5 +3,5 @@ public interface Subject {
 
     void RemoveObserver(Observer o);
 
-    void NotifyObservers(Observer o);
+    void NotifyObservers();
 }
