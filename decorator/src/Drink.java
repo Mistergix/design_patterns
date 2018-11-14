@@ -7,4 +7,9 @@ public abstract class Drink {
     }
 
     public abstract double Cost();
+
+    void Display() {
+        System.out.println("Description : " + GetDescription());
+        System.out.println("Cost " + Cost());
+    }
 }
