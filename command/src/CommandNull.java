@@ -3,4 +3,9 @@ public class CommandNull implements Command {
     public void Execute() {
         // do nothing
     }
+
+    @Override
+    public void Cancel() {
+        // do nothing
+    }
 }

@@ -9,4 +9,9 @@ public class CommandOpenGarageDoor implements Command {
     public void Execute() {
         garage.OpenDoor();
     }
+
+    @Override
+    public void Cancel() {
+        garage.CloseDoor();
+    }
 }

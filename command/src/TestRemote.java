@@ -13,8 +13,8 @@ public class TestRemote {
         remote.setCommand(1, command3, command4);
 
         remote.Off(0);
-        remote.On(0);
-        remote.Off(1);
+        remote.Cancel();
         remote.On(1);
+        remote.Cancel();
     }
 }

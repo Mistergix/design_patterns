@@ -1,5 +1,6 @@
 class RemoteController {
     private Command[] commandsOn, commandsOff;
+    private Command lastCancelCommand;
 
     RemoteController() {
         int maxCommands = 3;
@@ -10,6 +11,7 @@ class RemoteController {
         for (int i = 0; i < maxCommands; i++) {
             commandsOn[i] = commandsOff[i] = nullCommand;
         }
+        lastCancelCommand = nullCommand;
     }
 
     void setCommand(int index, Command on, Command off) {
@@ -19,9 +21,15 @@ class RemoteController {
 
     void On(int index) {
         commandsOn[index].Execute();
+        lastCancelCommand = commandsOn[index];
     }
 
     void Off(int index) {
         commandsOff[index].Execute();
+        lastCancelCommand = commandsOff[index];
+    }
+
+    void Cancel() {
+        lastCancelCommand.Cancel();
     }
 }

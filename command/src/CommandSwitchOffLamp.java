@@ -10,4 +10,9 @@ public class CommandSwitchOffLamp implements Command // that's one command/Butto
     public void Execute() {
         lamp.Off(); // we delegate the execute to one of the object's method
     }
+
+    @Override
+    public void Cancel() {
+        lamp.On();
+    }
 }
