@@ -16,5 +16,16 @@ public class TestRemote {
         remote.Cancel();
         remote.On(1);
         remote.Cancel();
+
+        // Test macro command
+        System.out.println("---------------------------------");
+
+        Command[] commands = {command2, command3}; // I want to close the garage and switch on the light
+        Command[] commandsReverse = {command1, command4};
+
+        remote.setCommand(2, new MacroCommand(commands), new MacroCommand(commandsReverse));
+
+        remote.On(2);
+        remote.Off(2);
     }
 }
