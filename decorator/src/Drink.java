@@ -1,9 +1,5 @@
-public abstract class Drink {
-    private String description = "Boisson inconnue";
+interface Drink {
+    String GetDescription();
 
-    public String GetDescription() {
-        return description;
-    }
-
-    public abstract double Cost();
+    double Cost();
 }
