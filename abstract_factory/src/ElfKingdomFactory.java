@@ -1,4 +1,4 @@
-public class ElfKingdomFactory implements KingdomFactory {
+public class ElfKingdomFactory implements KingdomFactory { // the elven way
     @Override
     public Castle createCastle() {
         return new ElfCastle();

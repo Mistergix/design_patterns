@@ -1,7 +1,7 @@
-public interface KingdomFactory {
+public interface KingdomFactory { // abstract factory
     Castle createCastle();
 
-    King createKing();
+    King createKing(); // for each "product", we defined a method
 
     Army createArmy();
 }
