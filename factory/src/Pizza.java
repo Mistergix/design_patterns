@@ -32,7 +32,7 @@ public abstract class Pizza // all the pizzas must inherits from this class
     }
 
     void packaging() {
-        System.out.println("Packagning in a box");
+        System.out.println("Packaging in a box");
     }
 
     public String getName() {
