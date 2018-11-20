@@ -15,7 +15,7 @@ public class CrepeShop {
         dishes.add(dish);
     }
 
-    public ArrayList<Dish> getDishes() {
-        return dishes;
+    Iterator getIterator() {
+        return new IteratorCrepeShop(dishes);
     }
 }

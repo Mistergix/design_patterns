@@ -18,8 +18,8 @@ class CoffeShop {
         }
     }
 
-    public Dish[] getDishes() {
-        return dishes;
+    Iterator getIterator() {
+        return new IteratorCoffeeShop(dishes);
     }
 }
 
