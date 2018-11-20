@@ -1,4 +1,4 @@
-public class PizzeriaParis extends Pizzeria {
+class PizzeriaParis extends Pizzeria {
     @Override
     Pizza createPiza(String type) {
         switch (type) {
