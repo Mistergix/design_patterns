@@ -1,13 +1,13 @@
-public class Server {
+class Server {
     private CoffeShop coffeShop;
     private CrepeShop crepeShop;
 
-    public Server(CoffeShop coffeShop, CrepeShop crepeShop) {
+    Server(CoffeShop coffeShop, CrepeShop crepeShop) {
         this.coffeShop = coffeShop;
         this.crepeShop = crepeShop;
     }
 
-    public void displayMenu() {
+    void displayMenu() {
         displayMenu(coffeShop.getIterator());
         displayMenu(crepeShop.getIterator());
     }
@@ -18,6 +18,8 @@ public class Server {
             System.out.println(dish.getName());
             System.out.println(dish.getDescription());
             System.out.println(dish.getPrice());
+            System.out.println(dish.isVeggie() ? "Vegan" : "Not vegan");
+            System.out.println("-----------");
         }
     }
 
