@@ -1,9 +1,9 @@
-class CoffeShop {
+class CoffeShop implements Menu {
     private static final int MAX = 6;
     private int count = 0;
     private Dish[] dishes;
 
-    public CoffeShop() {
+    CoffeShop() {
         dishes = new Dish[MAX];
 
         addDish(new Dish("Salad", "Tomatoes, Cucumber, Potatoes", true, 2.99));
@@ -18,7 +18,8 @@ class CoffeShop {
         }
     }
 
-    Iterator getIterator() {
+    @Override
+    public Iterator getIterator() {
         return new IteratorCoffeeShop(dishes);
     }
 }

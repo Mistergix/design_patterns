@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
-public class CrepeShop {
+public class CrepeShop implements Menu {
     private ArrayList<Dish> dishes;
 
-    public CrepeShop() {
+    CrepeShop() {
         dishes = new ArrayList<>();
 
         addDish(new Dish("Crêpe à l'oeuf", "With an egg", true, 2.99));
@@ -15,7 +15,8 @@ public class CrepeShop {
         dishes.add(dish);
     }
 
-    Iterator getIterator() {
+    @Override
+    public Iterator getIterator() {
         return new IteratorCrepeShop(dishes);
     }
 }

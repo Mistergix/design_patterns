@@ -1,8 +1,8 @@
 class Server {
-    private CoffeShop coffeShop;
-    private CrepeShop crepeShop;
+    private Menu coffeShop;
+    private Menu crepeShop;
 
-    Server(CoffeShop coffeShop, CrepeShop crepeShop) {
+    Server(Menu coffeShop, Menu crepeShop) {
         this.coffeShop = coffeShop;
         this.crepeShop = crepeShop;
     }
