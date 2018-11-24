@@ -3,16 +3,22 @@ public class CandyMachine {
     private State noCoin;
     private State hasCoin;
     private State sold;
+    private State winner;
+
+    State getWinner() {
+        return winner;
+    }
 
     private State current;
     private int number;
 
-    public CandyMachine(int number) {
+    CandyMachine(int number) {
         this.number = number;
         empty = new StateEmpty(this);
         noCoin = new StateNoCoin(this);
         hasCoin = new StateHasCoin(this);
         sold = new StateSold(this);
+        winner = new StateWinner(this);
 
         current = empty;
         if (number > 0) {
@@ -20,7 +26,7 @@ public class CandyMachine {
         }
     }
 
-    public void insertCoin() {
+    void insertCoin() {
         current.insertCoin();
     }
 
@@ -28,7 +34,7 @@ public class CandyMachine {
         current.removeCoin();
     }
 
-    public void rotateHandle() {
+    void rotateHandle() {
         current.rotateHandle();
         current.deliver();
     }
@@ -45,7 +51,7 @@ public class CandyMachine {
         return noCoin;
     }
 
-    public int getNumber() {
+    int getNumber() {
         return number;
     }
 

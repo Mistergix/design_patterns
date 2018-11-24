@@ -1,5 +1,8 @@
+import java.util.Random;
+
 public class StateHasCoin implements State {
     private CandyMachine candyMachine;
+    private Random random = new Random(System.currentTimeMillis());
 
     StateHasCoin(CandyMachine candyMachine) {
         this.candyMachine = candyMachine;
@@ -19,7 +22,12 @@ public class StateHasCoin implements State {
     @Override
     public void rotateHandle() {
         System.out.println("you turned the handle");
-        candyMachine.setState(candyMachine.getSold());
+        int winner = random.nextInt(3);
+        if (winner == 0 && candyMachine.getNumber() >= 2) {
+            candyMachine.setState(candyMachine.getWinner());
+        } else {
+            candyMachine.setState(candyMachine.getSold());
+        }
     }
 
     @Override
