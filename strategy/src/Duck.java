@@ -4,4 +4,8 @@ abstract class Duck {
     void Fly() {
         fly.Fly();
     }
+
+    void SetFlyBehavior(FlyBehavior fly) {
+        this.fly = fly;
+    }
 }
