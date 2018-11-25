@@ -1,3 +1,3 @@
-public interface Quacker {
+public interface Quacker extends QuackObservable {
     void quack();
 }

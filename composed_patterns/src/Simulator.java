@@ -26,13 +26,10 @@ public class Simulator {
 
         groupOfDucks.add(groupOfColverts); // added the group to another one
 
-        System.out.println("\non all quackers");
+        QuackerStudent student = new QuackerStudent();
+        groupOfDucks.addObserver(student);
 
         simulate(groupOfDucks); // on all quackers
-
-        System.out.println("\nonly on colverts");
-
-        simulate(groupOfColverts); // only on colverts
 
         System.out.println("Counted : " + QuackCounter.getCount());
     }
