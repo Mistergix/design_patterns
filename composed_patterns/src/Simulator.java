@@ -1,14 +1,15 @@
 public class Simulator {
     public static void main(String[] args) {
         Simulator simulator = new Simulator();
-        simulator.simulate();
+        AbstractFactoryDucks factory = new FactoryDucksCounting();
+        simulator.simulate(factory); // adding the factory to be able to change the family of ducks
     }
 
-    private void simulate() {
-        Quacker colvert = new QuackCounter(new Colvert());
-        Quacker mandarin = new QuackCounter(new Mandarin());
-        Quacker fake = new QuackCounter(new FakeDuck());
-        Quacker plastic = new QuackCounter(new PlasticDuck());
+    private void simulate(AbstractFactoryDucks factoryDucks) {
+        Quacker colvert = factoryDucks.createColvert();
+        Quacker mandarin = factoryDucks.createMandarin();
+        Quacker fake = factoryDucks.createFake();
+        Quacker plastic = factoryDucks.createPlastic();
         Quacker gooseQuacker = new AdapterGoose(new Goose()); // we don't want to count the geese quacks
 
         simulate(colvert);
