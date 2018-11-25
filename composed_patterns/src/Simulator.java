@@ -12,11 +12,27 @@ public class Simulator {
         Quacker plastic = factoryDucks.createPlastic();
         Quacker gooseQuacker = new AdapterGoose(new Goose()); // we don't want to count the geese quacks
 
-        simulate(colvert);
-        simulate(mandarin);
-        simulate(fake);
-        simulate(plastic);
-        simulate(gooseQuacker); // we can treat the goose as a quacker
+        DuckGroup groupOfDucks = new DuckGroup();
+        groupOfDucks.add(fake);
+        groupOfDucks.add(mandarin);
+        groupOfDucks.add(plastic);
+        groupOfDucks.add(gooseQuacker);
+
+        DuckGroup groupOfColverts = new DuckGroup();
+        groupOfColverts.add(colvert);
+        groupOfColverts.add(factoryDucks.createColvert());
+        groupOfColverts.add(factoryDucks.createColvert());
+        groupOfColverts.add(factoryDucks.createColvert());
+
+        groupOfDucks.add(groupOfColverts); // added the group to another one
+
+        System.out.println("\non all quackers");
+
+        simulate(groupOfDucks); // on all quackers
+
+        System.out.println("\nonly on colverts");
+
+        simulate(groupOfColverts); // only on colverts
 
         System.out.println("Counted : " + QuackCounter.getCount());
     }
