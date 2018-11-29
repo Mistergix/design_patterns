@@ -1,0 +1,3 @@
+interface ColorProtoype {
+    ColorProtoype Clone();
+}
